@@ -1,20 +1,17 @@
 # Sarcasm-Detection-ArSarcasm-Dataset
 
 ## Data
-### ArSarcasm Dataset
+### ArSarcasm-v2 Dataset
 
-**ArSarcasm** is a new Arabic sarcasm detection dataset. The dataset was created using previously available Arabic sentiment analysis datasets ([SemEval 2017](https://www.aclweb.org/anthology/S17-2088.pdf) and [ASTD](https://www.aclweb.org/anthology/D15-1299.pdf)) and adds sarcasm and dialect labels to them.
-The dataset contains 10,547 tweets, 1,682 (16\%) of which are sarcastic. For more details, please check our paper [From Arabic Sentiment Analysis to Sarcasm Detection: The ArSarcasm Dataset](https://www.aclweb.org/anthology/2020.osact-1.5/)
+**ArSarcasm-v2** is an extension of the original ArSarcasm dataset published along with the paper [From Arabic Sentiment Analysis to Sarcasm Detection: The ArSarcasm Dataset](https://www.aclweb.org/anthology/2020.osact-1.5/). ArSarcasm-v2 conisists of ArSarcasm along with portions of [DAICT corpus](https://www.aclweb.org/anthology/2020.lrec-1.768/) and some new tweets. Each tweet was annotated for sarcasm, sentiment and dialect. The final dataset consists of 15,548 tweets divided into 12,548 training tweets and 3,000 testing tweets. ArSarcasm-v2 was used and released as a part of the [shared task on sarcasm detection and sentiment analysis in Arabic](https://sites.google.com/view/ar-sarcasm-sentiment-detection/)
 
 ### Dataset details:
-**ArSarcasm** is provided in a CSV format, we provide an 80/20 train/test split to keep things consistent for future comparisons. The training set contains 8,437 tweets, while the test set contains 2,110 tweets.
+**ArSarcasm-v2** is provided in a CSV format, we provide the same split that was used for the shared task. The training set contains 12,548 tweets, while the test set contains 3,000 tweets.
 
 The dataset contains the following fields:
-* `tweet`: the original tweet text surrounded by quotes (").
+* `tweet`: the original tweet text.
 * `sarcasm`: boolean that indicates whether a tweet is sarcastic or not.
-* `sentiment`: the sentiment from the new annotation (positive, negative, neutral).
-* `original_sentiment`: the sentiment in the original annotations (positive, negative, neutral).
-* `source`: the original source of tweet SemEval or ASTD.
+* `sentiment`: the sentiment of the tweet (positive, negative, neutral).
 * `dialect`: the dialect used in the tweet, we used the 5 main regions in the Arab world, follows the labels and their meanings:
   * `msa`: modern standard Arabic.
   * `egypt`: the dialect of Egypt and Sudan.
@@ -24,17 +21,16 @@ The dataset contains the following fields:
 
 
 ## Citation
+
 ```
-@inproceedings{abu-farha-magdy-2020-arabic,
-    title = "From {A}rabic Sentiment Analysis to Sarcasm Detection: The {A}r{S}arcasm Dataset",
-    author = "Abu Farha, Ibrahim  and Magdy, Walid",
-    booktitle = "Proceedings of the 4th Workshop on Open-Source Arabic Corpora and Processing Tools, with a Shared Task on Offensive Language Detection",
-    month = may,
-    year = "2020",
-    address = "Marseille, France",
-    publisher = "European Language Resource Association",
-    url = "https://www.aclweb.org/anthology/2020.osact-1.5",
-    pages = "32--39",
-    language = "English",
-    ISBN = "979-10-95546-51-1",
-}
+@inproceedings{abufarha-etal-2021-arsarcasm-v2,
+title = "Overview of the WANLP 2021 Shared Task on Sarcasm and Sentiment Detection in Arabic",
+    author = "Abu Farha, Ibrahim  and
+    Zaghouani, Wajdi  and
+    Magdy, Walid",
+    booktitle = "Proceedings of the Sixth Arabic Natural Language Processing Workshop",
+    month = april,
+    year = "2021",
+    }
+
+```
