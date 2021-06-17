@@ -23,14 +23,15 @@ The dataset contains the following fields:
 ## Citation
 
 ```
-@inproceedings{abufarha-etal-2021-arsarcasm-v2,
-title = "Overview of the WANLP 2021 Shared Task on Sarcasm and Sentiment Detection in Arabic",
-    author = "Abu Farha, Ibrahim  and
-    Zaghouani, Wajdi  and
-    Magdy, Walid",
-    booktitle = "Proceedings of the Sixth Arabic Natural Language Processing Workshop",
-    month = april,
-    year = "2021",
+@inproceedings
+    {abufarha-etal-2021-arsarcasm-v2,
+     title = "Overview of the WANLP 2021 Shared Task on Sarcasm and Sentiment Detection in Arabic",
+     author = "Abu Farha, Ibrahim  and
+     Zaghouani, Wajdi  and
+     Magdy, Walid",
+     booktitle = "Proceedings of the Sixth Arabic Natural Language Processing Workshop",
+     month = april,
+     year = "2021",
     }
 
 ```
