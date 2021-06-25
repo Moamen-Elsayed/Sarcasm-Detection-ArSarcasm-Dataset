@@ -1,7 +1,9 @@
 import numpy as np
+import pandas as pd
 import matplotlib
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
+import seaborn as sns
 import itertools
 import arabic_reshaper
 from bidi.algorithm import get_display
@@ -171,3 +173,13 @@ def print_confusion_matrix(y_test, pred_test):
     fig = plt.figure(figsize=(10, 10))
     plot = plot_confusion_matrix(cm, classes=['Not Sarcasm','Sarcasm'], normalize=False, title='Confusion matrix')
     plt.show()
+
+def plot_score_for_weight(gridsearch, weights):
+    sns.set_style('whitegrid')
+    plt.figure(figsize=(12,8))
+    weigh_data = pd.DataFrame({ 'score': gridsearch.cv_results_['mean_test_score'], 'weight': (1- weights)})
+    sns.lineplot(weigh_data['weight'], weigh_data['score'])
+    plt.xlabel('Weight for class 1')
+    plt.ylabel('F1 score')
+    plt.xticks([round(i/10,1) for i in range(0,11,1)])
+    plt.title('Scoring for different class weights', fontsize=24)
