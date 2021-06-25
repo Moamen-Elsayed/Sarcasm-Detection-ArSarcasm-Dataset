@@ -8,6 +8,7 @@ from bidi.algorithm import get_display
 import arabicstopwords.arabicstopwords as stp
 from sklearn.decomposition import  TruncatedSVD
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
+from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score, confusion_matrix
 import re
 
 
@@ -154,3 +155,19 @@ def get_average_word2vec(tokens_list, vector, generate_missing=False, k=300):
 def get_word2vec_embeddings(vectors, data, generate_missing=False):
     embeddings = data.apply(lambda x: get_average_word2vec(x, vectors, generate_missing=generate_missing))
     return list(embeddings)
+
+def print_scores(y_test, pred_test):
+    f1_test = f1_score(y_test, pred_test)
+    precision_test = precision_score(y_test, pred_test)
+    recall_test = recall_score(y_test, pred_test)
+    accuracy_test = accuracy_score(y_test, pred_test)
+    print('The f1 score for the testing data:', f1_test)
+    print('The precision score for the testing data:', precision_test)
+    print('The recall score for the testing data:', recall_test)
+    print('The accuracy score for the testing data:', accuracy_test)
+
+def print_confusion_matrix(y_test, pred_test):
+    cm = confusion_matrix(y_test, pred_test)
+    fig = plt.figure(figsize=(10, 10))
+    plot = plot_confusion_matrix(cm, classes=['Not Sarcasm','Sarcasm'], normalize=False, title='Confusion matrix')
+    plt.show()
