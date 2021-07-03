@@ -158,7 +158,7 @@ def get_word2vec_embeddings(vectors, data, generate_missing=False):
     embeddings = data.apply(lambda x: get_average_word2vec(x, vectors, generate_missing=generate_missing))
     return list(embeddings)
 
-def print_scores(y_test, pred_test):
+def print_test_scores(y_test, pred_test):
     f1_test = f1_score(y_test, pred_test)
     precision_test = precision_score(y_test, pred_test)
     recall_test = recall_score(y_test, pred_test)
@@ -183,3 +183,14 @@ def plot_score_for_weight(gridsearch, weights):
     plt.ylabel('F1 score')
     plt.xticks([round(i/10,1) for i in range(0,11,1)])
     plt.title('Scoring for different class weights', fontsize=24)
+
+def print_train_scores(y_train, pred_train):
+    f1_train = f1_score(y_train, pred_train)
+    precision_train = precision_score(y_train, pred_train)
+    recall_train = recall_score(y_train, pred_train)
+    accuracy_train = accuracy_score(y_train, pred_train)
+    print('The f1 score for the training data:', f1_train)
+    print('The precision score for the training data:', precision_train)
+    print('The recall score for the training data:', recall_train)
+    print('The accuracy score for the training data:', accuracy_train)
+
