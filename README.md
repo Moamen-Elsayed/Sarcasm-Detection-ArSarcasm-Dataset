@@ -1,5 +1,22 @@
 # Sarcasm-Detection-ArSarcasm-Dataset
-(Not Finished Yet)
+## The literature has a large amount of work on sarcasm and
+irony detection, which vary from collecting datasets to
+building detection systems. However, researchers and linguists cannot yet agree on a specific definition of what is
+considered to be sarcasm. According to (Grice et al., 1975)
+sarcasm is a form of figurative language where the literal
+meaning of words is not intended, and the opposite interpretation of the utterance is the intended one. Gibbs Jr et al.
+(1994) define sarcasm as a bitter and caustic from of irony.
+According to Merriam Webster’s dictionary 2, sarcasm is “a
+sharp and often satirical or ironic utterance designed to cut
+or give pain”, while irony is defined as “ the use of words
+to express something other than and especially the opposite
+of the literal meaning”. These definitions are quite close to
+each other, yet each of them gives a different definition of
+sarcasm. While most of the literature assumes that sarcasm
+is a form of irony, Justo et al. (2014) argues that it is not
+necessarily ironic. Thus, sarcasm is always confused with
+other forms of figurative language such as metaphor, irony,
+humour and satire.
 
 ## Data
 ### ArSarcasm-v2 Dataset
